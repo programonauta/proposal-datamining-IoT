@@ -453,10 +453,10 @@ FUNCTION {format.article.items}
   if$
   note empty$
     { url empty$ not
-        { "note" 'e1 :=
-          ". " * format.msg.erro }
+%        { "note" 'e1 :=
+%          ". " * format.msg.erro }
         'skip$
-      if$
+%      if$
     }
     { ". Acesso em: " * note * }
   if$
@@ -540,10 +540,10 @@ FUNCTION {format.inproceedings.items}
     { "booktitle" 'e1 :=
       ". In: " * format.msg.erro }
     { ". In: " * booktitle capitalize * }
-  if$
-  edition empty$
-    { "edition" 'e1 :=
-      ", " * format.msg.erro }
+%  if$
+%  edition empty$
+%    { "edition" 'e1 :=
+%      ", " * format.msg.erro }
     { ", " * edition * "." * }
   if$
   series empty$
@@ -622,12 +622,13 @@ FUNCTION {format.inproceedings.items}
     { ". Disponível em: <" * url * ">" *}
   if$
   note empty$
-    { url empty$ not
-        { "note" 'e1 :=
-          ". " * format.msg.erro }
-        'skip$
-      if$
-    }
+%    { url empty$ not
+%        { "note" 'e1 :=
+%          ". " * format.msg.erro }
+%        'skip$
+%      if$
+%    }
+	{ "" * }
     { ". Acesso em: " * note * }
   if$
 }
@@ -665,10 +666,10 @@ FUNCTION {format.siteurl.items}
     { "url" 'e1 :=
       ". " * format.msg.erro }
     { ". Disponível em: <" * url * ">" *}
-  if$
-  note empty$
-    { "note" 'e1 :=
-      ". " * format.msg.erro }
+%  if$
+%  note empty$
+%    { "note" 'e1 :=
+%      ". " * format.msg.erro }
     { ". Acesso em: " * note * }
   if$
 }

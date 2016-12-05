@@ -6,4 +6,7 @@
 *.blg
 *.pdf
 *.bbl
+*.snm
+*.nav
+*.toc
 *~
