@@ -31,45 +31,92 @@ A indústria e a academia têm trabalhado na construções de ambientes composto
 
 A quantidade de dados geradas pelos dispositivos gera grandes oportunidades de extrair informações valiosas com a utilização de técnicas de KDD (\textit{Knowledge Discovery in Databases}) e Mineração de dados, mas por outro lado traz grandes desafios no gerenciamento dos dados devido ao volume, heterogeneidade, dispersão e questões temporais, dos dados gerados pelas coisas.
 
-De acordo com \cite{000-000} a quantidade de dados gerados em um ano já excede a 1 zetabyes ou $10^{21}$ bytes. As ferramentas de análise de dados disponíveis atualmente não são poderosas o suficiente para lidar com uma quantidade tão grande de dados, isso sem contar com as questões de armazenamento e capacidade de transmissão de todo esse volume de informação entre as coisas e os nós centrais de processamento. Curiosamente o gargalo no tratamento dos dados, nesse contexto, aos poucos é transferido dos sensores para o processamento, comunicação e armazenamento.
+De acordo com \cite{000-000} a quantidade de dados gerados em um ano já excede a 1 zetabyes ($10^{21}$ bytes). As ferramentas de análise de dados disponíveis atualmente não são poderosas o suficiente para lidar com uma quantidade tão grande de dados, isso sem contar com as questões de armazenamento e capacidade de transmissão de todo esse volume de informação entre as coisas e os nós centrais de processamento. Curiosamente o gargalo no tratamento dos dados, nesse contexto, aos poucos é transferido dos sensores para o processamento, comunicação e armazenamento.
 
 Os dados na Internet das Coisas podem ser classificados em dados sobre as coisas, como estado, localização, etc e dados gerados pelas coisas. Esses últimos contém dados representativos das interações entre: (i) coisas, (ii) humanos e coisas e (iii) entre humanos \cite{000-018}. 
 
 Assim, ao utilizar técnicas de detecção de padrões é possível identificar o comportamento das coisas e dos humanos cujos dados são coletados pelos dispositivos, que por sua vez possibilitam identificar desvios comportamentais dos objetos e pessoas monitorados. 
 
 \section{Trabalhos Relacionados} \label{sec:trabRelac}
-Cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Quem num gosta di mé, boa gente num é. in elementis mé pra quem é amistosis quis leo.
 
-Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Paisis, filhis, espiritis santis. Cevadis im ampola pa arma uma pindureta.
+Os trabalhos relacionados foram divididos em três grupos: \begin{itemize}
+    \item \textbf{Mineração de Dados na Internet das Coisas}: Apresentam o estado da arte da Mineração de dados na Internet das Coisas. Apresentam os desafios e os problemas abertos.
+    \item \textbf{Mineração de Dados Distribuída}: Trabalhos com técnicas de mineração distribuída, não necessariamente no contexto da Internet das Coisas. \linebreak
+    Apresentarão bases para análise e projeto dos algoritmos e técnicas que serão desenvolvidos  para o atingimento do objetivo.
+    \item \textbf{Detecção de Desvios}: Trabalhos relacionados com identificação de padrões com geração de modelos e detecção de desvios de comportamento no monitoramento de atividades.
+    \end{itemize}
 
-Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Pra lá , depois divoltis porris, paradis. Manduma pindureta quium dia nois paga.
+\subsection{Mineração de Dados na Internet das Coisas}
+
+\begin{enumerate}
+
+    \item \cite{000-000}: Um Survey abrangente sobre mineração de dados no contexto da Internet das Coisas. Discorre sobre as diversas técnicas de mineração de dados aplicadas ao contexto da Internet das Coisas relacionando-as com seus usos: infraestrutura e serviços. Apresenta os principais problemas abertos, divididos nos seguintes grupos: \begin{itemize}
+        \item Infraestrutura
+        \item Dados
+        \item Algoritmos
+        \item Segurança e Privacidade
+    \end{itemize}
+    Aborda o fato dos principais algoritmos de mineração de dados serem centralizados, o que pode, em pouco tempo inviabilizar suas utilizações em Internet das Coisas devido à sobrecarga causada nas redes de dispositivos na transferência de grande quantidade de dados.
+
+    \item \cite{000-014}: São abordados os desafios na mineração de redes de sensores sem fio -- WSN (\textit{Wireless Sensor Networks}. Tem como foco analisar o trade-off entre: \begin{itemize}
+        \item Mineração centralizada com alto consumo de rede para transferência de dados
+        \item Mineração nos sensores com limitações: \begin{itemize}
+            \item Capacidade de processamento
+            \item Consumo de Energia
+            \item Tempo de vida das baterias
+        \end{itemize}
+    \end{itemize}
+ 
+    \item \cite {003-000}: A partir da preocupação com o grande volume de dados, o trabalho propõe quatro diferentes modelos de mineração de dados para Internet das coisas: \begin{itemize}
+        \item Modelo multicamada
+        \item Modelo de Mineração Distribuída
+        \item Mineração de Dados baseada em Grid
+        \item Modelo baseado numa perspectiva multitecnológica.
+    \end{itemize}
+
+    Após a descrição dos modelos, são apresentados alguns dos problemas abertos e uma discussão sobre a utilização de mineração centralizada versus descentralizada. 
+    
+\end{enumerate}
+
+\subsection{Mineração de Dados Distribuída}
+
+\begin{enumerate}
+
+    \item \cite{001-000}: Nesse trabalho é apresentado o GDCluster, um algoritmo genérico de clusterização descentralizada. 
+    Tem como proposta que cada nó faça uma sumarização de seus dados e compartilhe com seus vizinhos. O resultado final é atingido analisando os dados internos com os dados sumarizados recebidos dos demais nós. Isso é feito de forma iterativa até que se chegue no nó central.
+    O algoritmo considera o dinamismo dos dados, atribuindo uma idade a cada item do \textit{dataset}.
+    
+    % Colocar figura? 
+    
+    \item \cite{017-000}: Apresenta o $D^{2}CA$ (\textit{Distributed Dynamic Clustering Algorithm}), um algoritmo que explora a clusterização de forma distribuída, maximizando o paralelismo e minimizando a comunicação. Tem como rotina básica: \begin{itemize}
+        \item Modelos locais gerados por clusterização K-means
+        \item Cálculo dos contornos (usados como representantes dos clusters)
+        \item Troca de contornos entre nos vizinhos
+        \item Fusão dos contornos em grupos
+        \item Escolha de um líder entre os nós
+        \item Repetição do processo até atingir o nó central.
+    \end{itemize}
+    
+
+\end{enumerate}
+
+\subsection{Detecção de Desvios}
+
+\begin{enumerate}
+    \item \cite{022-000}: Propõe uma nova formulação na detecção de \textit{outliers} com base na distância, utilizando um algoritmo baseado em partições
+    \item \cite{023-000}: Utiliza o algoritmo LOF (\textit{Local Outlier Factor}) aplicado em um grid com o objetivo de reduzir o tempo de computação na descoberta de desvios de comporamento.
+\end{enumerate}
 
 \section{Problema} \label{sec:problema}
-Sapien in monti palavris qui num significa nadis i pareci latim. Diuretics paradis num copo é motivis de denguis. Atirei o pau no gatis, per gatis num morreus. Si num tem leite então bota uma pinga aí cumpadi!
 
-A ordem dos tratores não altera o pão duris Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Delegadis gente finis, bibendum egestas augue arcu ut est. Quem manda na minha terra sou Euzis!
-
-Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Viva Forevis aptent taciti sociosqu ad litora torquent Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. undefined 
 
 \section{Hipótese} \label{sec:hipotese}
-Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Delegadis gente finis, bibendum egestas augue arcu ut est. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.
 % PARTE DE HIPÓTESES DE PESQUSA - TANTAS QUANTO NECESSÁRIO
 \begin{hipo}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
-\end{hipo}
-
-
-
-Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Per aumento de cachacis, eu reclamis. Quem num gosta di mé, boa gente num é. Cevadis im ampola pa arma uma pindureta.
-
-Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Ta deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.” Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. 
+O uso de técnicas de mineração de dados distribuída no cenáario da Internet das Coisas pode contribuir para reduzir o tráfego de informações necessárias às análises de desvios de padrões de comportamento sem diminuir a qualidade dos padrões que seriam identificados por meio de técnicas de mineração de dados centralizada.\end{hipo}
 
 \section{Objetivo} \label{sec:obj}
-Quem manda na minha terra sou Euzis! A ordem dos tratores não altera o pão duris Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Diuretics paradis num copo é motivis de denguis.
-
-Per aumento de cachacis, eu reclamis. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Atirei o pau no gatis, per gatis num morreus.
-
-Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Paisis, filhis, espiritis santis. Suco de cevadiss deixa as pessoas mais interessantiss. Quem num gosta di mé, boa gente num é. 
+Demonstrar que o uso de técnicas de mineração de dados distribuída no cenáario da Internet das Coisas pode contribuir para reduzir o tráfego de informações necessárias às análises de desvios de padrões de comportamento sem diminuir a qualidade dos padrões que seriam identificados por meio de técnicas de mineração de dados centralizada.
 
 \section{Contribuições} \label{sec:contrib}
 Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Quem num gosta di mé, boa gente num é. Atirei o pau no gatis, per gatis num morreus.
