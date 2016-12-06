@@ -10,7 +10,7 @@
 
 \chapter{Introdução} \label{chap:Intro}
 % #TXT_INTRODUCAO
-O avanço tecnológico que possibilitou a redução de tamanho de processadores, aliada ao aumento de capacidade de processamento abriu caminho para uma proliferação de equipamentos integrados com sensores, atuadores, RFIDs (Radio-Frequency IDentification), smartphones e dispositivos sem fio a serem utilizados para os mais diversos propósitos. Havia uma tendência natural que esses dispositivos se conectassem à internet a fim de compartilhar os dados coletados com nós geograficamente dispersos e permitir que usuários pudessem enviar comandos para esses objetos de forma remota.
+O avanço tecnológico que possibilitou a redução de tamanho de processadores, aliado ao aumento de capacidade de processamento abriu caminho para uma proliferação de equipamentos integrados com sensores, atuadores, RFIDs (Radio-Frequency IDentification), smartphones e dispositivos sem fio a serem utilizados para os mais diversos propósitos. Havia uma tendência natural que esses dispositivos se conectassem à internet a fim de compartilhar os dados coletados com nós geograficamente dispersos e permitir que usuários pudessem enviar comandos para esses objetos de remotamente.
 
 Ao longo do tempo, mesmo que não tenhamos dado conta, essas "coisas" começaram a fazer parte de nossas vidas alterando significativamente a forma como os indivíduos se relacionam.
 
@@ -18,21 +18,24 @@ Ao longo do tempo, mesmo que não tenhamos dado conta, essas "coisas" começaram
 
 Para representar essa extensão da internet que rompeu os limites das redes de computadores, participando de forma pervasiva no dia a dia das pessoas, foi cunhado o termo Internet das Coisas.
 
-De acordo com \cite{000-000} a Internet das coisas nasceu com o propósito ousado de conectar todas as coisas do mundo na internet. O que está causando um grande impacto no dia-a-dia e no comportamento das pessoas, \cite{000-003}, uma vez que está se inserindo em diversas áreas como por exemplo transporte, ambientes domésticos, indústria, logística, saúde e entretenimento. A cada dia um novo sistema ou aplicação é incluído nesse ecossistema, de forma que hoje, a grande maioria de nossas atividades diárias estão sendo controladas ou monitoradas por um dispositivo conectado à intenet.
+De acordo com \cite{000-000} a Internet das coisas nasceu com o propósito ousado de conectar todas as coisas do mundo na internet. O que está causando um grande impacto no dia-a-dia e no comportamento das pessoas, \cite{000-003}, uma vez que está se inserindo em diversas áreas como por exemplo transporte, ambientes domésticos, indústria, logística, saúde e entretenimento. A cada dia um novo sistema ou aplicação é incluído nesse ecossistema, de forma que hoje, a grande maioria de nossas atividades diárias estão sendo controladas ou monitoradas por um dispositivo conectado à internet.
 
 A indústria e a academia têm trabalhado na construções de ambientes compostos por sistemas inteligentes em diversas áreas como casas inteligentes, transporte, logística e saúde \cite{000-000}.
 
-Outra linha de pesquisa tem aprofundado a questão da arquitetura dos dispositivos como em \cite{000-006} no qual é proposta uma análise abrangente do estado da arte da Internet das coisas abordando uma proposta de desenho de arquitetura de três camadas: (i) Tecnológica, (ii) Acesso (iii) Internet, (iv) \textit{Middleware} e (v) Aplicação. Já em \cite{000-003} o autor aprofunda o assunto com foco no desenvolvimento para dispositos de Internet das Coisas, detalhando os quesitos técnicos da arquitetura.
-
-Porém, uma das mais importantes questões que tem surgido é como converter os dados gerados ou capturados pela Internet das Coisas em conhecimento \cite{000-000}. Então diversas técnicas de KDD (\textit{Knowledge Discovery in Databases}) e Mineração de dados têm sido aplicadas para analisar os dados com o objetivo de melhorar os serviços providos pelos ambientes formados por esses dispositivos.
+%Outra linha de pesquisa tem aprofundado a questão da arquitetura dos dispositivos como em \cite{000-006} no qual é proposta uma análise abrangente do estado da arte da Internet das coisas abordando uma proposta de desenho de arquitetura de três camadas: (i) Tecnológica, (ii) Acesso (iii) Internet, (iv) \textit{Middleware} e (v) Aplicação. Já em \cite{000-003} o autor aprofunda o assunto com foco no desenvolvimento para dispositos de Internet das Coisas, detalhando os quesitos técnicos da arquitetura.
+%
+%Porém, uma das mais importantes questões que tem surgido é como converter os dados gerados ou capturados pela Internet das Coisas em conhecimento \cite{000-000}. Então diversas técnicas de KDD (\textit{Knowledge Discovery in Databases}) e Mineração de dados têm sido aplicadas para analisar os dados com o objetivo de melhorar os serviços providos pelos ambientes formados por esses dispositivos.
 
 \section{Contextualização} \label{sec:context}
 % #TXT_CONTEXTUALIZACAO
 
+A quantidade de dados geradas pelos dispositivos gera grandes oportunidades de extrair informações valiosas com a utilização de técnicas de KDD (\textit{Knowledge Discovery in Databases}) e Mineração de dados, mas por outro lado traz grandes desafios no gerenciamento dos dados devido ao volume, heterogeneidade, dispersão e questões temporais, dos dados gerados pelas coisas.
 
-Diversos trabalhos apresentam algoritmos de mineração de dados em Internet das Coisas:  \cite{000-014} aborda a mineração em rede de sensores distribuídos,  \cite{000-015} em dispositivos RFID, \cite{000-056} apresenta algoritmos de clusterização para rede de sensores em fio e em \cite{003-000} são propostos quatro métodos diferentes de mineração de dados em Internet das Coisas.
+De acordo com \cite{000-000} a quantidade de dados gerados em um ano já excede a 1 zetabyes ou $10^{21}$ bytes. As ferramentas de análise de dados disponíveis atualmente não são poderosas o suficiente para lidar com uma quantidade tão grande de dados, isso sem contar com as questões de armazenamento e capacidade de transmissão de todo esse volume de informação entre as coisas e os nós centrais de processamento. Curiosamente o gargalo no tratamento dos dados, nesse contexto, aos poucos é transferido dos sensores para o processamento, comunicação e armazenamento.
 
-Os dados na Internet das Coisas podem ser classificados em dados sobre as coisas, como estado, localização, etc e dados gerados pelas coisas. Esses últimos contém dados representativos das interações entre: (i) coisas, (ii) humanos e coisas e (iii) entre humanos \cite{000-018}. Assim, ao utilizar técnicas de detecção de padrões é possível identificar o comportamento das coisas e dos humanos cujos dados são coletados pelos dispositivos, que por sua vez possibilitam identificar desvios comportamentais dos objetos e pessoas monitorados. 
+Os dados na Internet das Coisas podem ser classificados em dados sobre as coisas, como estado, localização, etc e dados gerados pelas coisas. Esses últimos contém dados representativos das interações entre: (i) coisas, (ii) humanos e coisas e (iii) entre humanos \cite{000-018}. 
+
+Assim, ao utilizar técnicas de detecção de padrões é possível identificar o comportamento das coisas e dos humanos cujos dados são coletados pelos dispositivos, que por sua vez possibilitam identificar desvios comportamentais dos objetos e pessoas monitorados. 
 
 \section{Trabalhos Relacionados} \label{sec:trabRelac}
 Cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Quem num gosta di mé, boa gente num é. in elementis mé pra quem é amistosis quis leo.
